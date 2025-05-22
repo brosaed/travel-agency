@@ -1,4 +1,5 @@
 import { Link } from 'react-router';  // Missing import added
+import {sidebarItems} from "~/constants";
 
 const NavItems = () => {
     return (
@@ -11,6 +12,15 @@ const NavItems = () => {
                 />
                 <h1>Tourvisto</h1>
             </Link>
+            <div className="container">
+                <nav>
+                    {sidebarItems.map(({ id,href,icon,label })=>(
+                    <div>{label}</div>
+                    ))}
+
+                </nav>
+
+            </div>
         </section>
     );
 };
