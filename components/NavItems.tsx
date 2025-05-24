@@ -3,6 +3,11 @@ import {sidebarItems} from "~/constants";
 import {cn} from "~/lib/utils";
 
 const NavItems = () => {
+    const user ={
+        name: 'admin',
+        email: 'saed.madkaash@gmail.com',
+        imageUrl: '/assets/images/david.webp'
+    }
     return (
         <section className="nav-items">
             <Link to='/' className="link-logo">
@@ -35,6 +40,10 @@ const NavItems = () => {
                     ))}
 
                 </nav>
+                <footer className="nav-footer">
+                    <img src={user?.imageUrl || '/assets/images/david.webp'} alt={user?.name || 'David'}  />
+
+                </footer>
 
             </div>
         </section>
