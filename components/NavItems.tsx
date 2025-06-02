@@ -19,7 +19,7 @@ const NavItems = ({handleClick}:{ handleClick?:()=> void}) => {
                 <h1>Tourvisto</h1>
             </Link>
 
-            <div className="container">
+            <div className="container space-y-80">
                 <nav>
                     {sidebarItems.map(({ id,href,icon,label })=>(
                         <NavLink to={href} key={id}>

@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { Link, NavLink } from 'react-router';
+import { Link } from 'react-router';
 import pkg from '@syncfusion/ej2-react-navigations';
 const { SidebarComponent } = pkg;
 
@@ -28,7 +28,7 @@ const MobileSidebar = () => {
             </header>
             <SidebarComponent
                 width={270}
-                ref={(Sidebar) => (sidebar = Sidebar)}
+                ref={(Sidebar) => sidebar = Sidebar}
                 created={() => sidebar.hide()}
                 closeOnDocumentClick={true}
                 showBackdrop={true}
