@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router';  // Missing import added
 import {sidebarItems} from "~/constants";
 import {cn} from "~/lib/utils";
 
-const NavItems = () => {
+const NavItems = ({handleClick}:{ handleClick?:()=> void}) => {
     const user ={
         name: 'admin',
         email: 'saed.madkaash@gmail.com',
@@ -18,14 +18,15 @@ const NavItems = () => {
                 />
                 <h1>Tourvisto</h1>
             </Link>
+
             <div className="container">
                 <nav>
                     {sidebarItems.map(({ id,href,icon,label })=>(
-                        <NavLink to ={href} key={id}>
-                            {({isActive}: { isActive: boolean})=>(
+                        <NavLink to={href} key={id}>
+                            {({ isActive }: { isActive: boolean})=>(
                                 <div className={cn('group nav-item',{
                                     'bg-primary-100 !text-white':isActive
-                                })}>
+                                })} onClick={handleClick} >
                                     <img
                                         src={icon}
                                         alt={label}
@@ -49,9 +50,9 @@ const NavItems = () => {
                     <button
                     onClick={()=>{
                         console.log('logout');
-                    }}
-                    className="cursor-pointer"
-                    >
+                        }}
+                        className="cursor-pointer"
+                        >
                         <img
                         src="/assets/icons/logout.svg"
                         alt="Logout"
